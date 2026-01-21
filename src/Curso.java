@@ -1,26 +1,17 @@
-public class Curso {
-    private String titulo;
-    private String decricao;
+import br.com.dio.desafio.dominio.Conteudo;
+
+public class Curso extends Conteudo {
+
     private int cargaHoraria;
 
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDecricao() {
-        return decricao;
-    }
-
-    public void setDecricao(String decricao) {
-        this.decricao = decricao;
-    }
 
     public int getCargaHoraria() {
         return cargaHoraria;
+    }
+
+    @Override
+    public double calcularXp() {
+        return XP_PADRAO * cargaHoraria;
     }
 
     public void setCargaHoraria(int cargaHoraria) {
@@ -30,11 +21,13 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", decricao='" + decricao + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricao='" + getDescricao() + '\'' +
                 ", cargaHoraria=" + cargaHoraria +
                 '}';
     }
+
+
 }
 
 
